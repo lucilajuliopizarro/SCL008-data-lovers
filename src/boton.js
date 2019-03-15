@@ -1,4 +1,4 @@
-var scrollToTop = (function() {
+/*var scrollToTop = (function() {
     var showButton = 600,
         scrollSpeed = 1000; 
     function scrollTop(b) {
@@ -22,4 +22,4 @@ var scrollToTop = (function() {
         scrollTop(scrollSpeed)
     }
 })();
-    window.onload = scrollToTop
+    window.onload = scrollToTop*/

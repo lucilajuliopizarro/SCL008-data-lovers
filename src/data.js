@@ -72,12 +72,27 @@ const filtereggs = (data,condition) => {
   }
   return orderPoke;
 }
+ //inicio de mi porcentaje
 
+// function porcentaje() {
+  //const num_3 = document.getElementById("num_3").value;
+  //const num_4 = document.getElementById("num_4").value;
+   //const result = num_3 * num_4 / 100;
 
+ 
+
+ //} 
+  
+ const computeStats = (data, condition) =>{
+  let result = filterPokemon(data, condition).length;
+  return result;
+
+}
 
 window.filterPokemon =filterPokemon;
 window.filtereggs =filtereggs;
 window.sortPokemon =sortPokemon;
+window.computeStats =computeStats;
 /**
  * *const order = () => {
 

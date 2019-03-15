@@ -19,4 +19,9 @@ describe('sortPokemon',() => {
     assert.equal(typeof sortPokemon, 'function');
   });
 });
+describe('computeStats',() => {
+  it('deberia ser una funcion',()=> {
+    assert.equal(typeof computeStats, 'function');
+  });
+});
 

@@ -1,4 +1,5 @@
 /* Manejo del DOM */
+/*Global google*/
 const data = window.POKEMON.pokemon;//me traigo la data de pokemon y la guargo en una const
 //console.log(DATA);
 const pokebox = document.getElementById('root'); // creo una constatante para llammar a mi contenedor root
@@ -9,7 +10,7 @@ const pokehuevo = document.getElementById('huevo');//llamo a mi id huevo que est
 
 //const pokeweight = document.getElementById('weight');//calculo por peso y lo llamo desde mi html
 
-
+//document.getElementById("num_5").value = result;
 
 
 const pokeOrden = document.getElementById('order');
@@ -55,7 +56,7 @@ pokeType.addEventListener('change', () => {// a mi poketype le paso el evento es
     let filtered = window.filterPokemon(data, condition);
     pokebox.innerHTML = ''; // limpiando el div
     filtered.forEach(element => { //foreach es un for para array que devuelve un nuevo array con element que es igua a DATA[i]
-        pokebox.innerHTML += `
+      pokebox.innerHTML += `
         <div class="carta-box">
         <div class="carta">    
           <div class="cara">
@@ -68,7 +69,7 @@ pokeType.addEventListener('change', () => {// a mi poketype le paso el evento es
             <img src="${element.img}">
             <div class="pokeinfo">
             <p>Tipo: ${element.type}</p>
-            <p>Evolucion: ${element.next_evolution[0].name}, ${element.next_evolution[1].name} </p>
+            <p>Evolucion: ${element.next_evolution[0].name}, ${element.next_evolution[1 ].name}</p>
             <p>Debilidad: ${element.weaknesses}</p>
             <p> Candy: ${element.candy}</p>
           </div>
@@ -126,18 +127,6 @@ filtrohuevo.forEach(element => {
  // })
   //})
  // termino de mi implementacion de calculo por peso//
- //inicio de mi porcentaje
-
- function porcentaje() {
-  const num_3 = document.getElementById("num_3").value;
-  const num_4 = document.getElementById("num_4").value;
-   const result = num_3 * num_4 / 100;
-
-  document.getElementById("num_5").value = result;
- } 
-
-//termino de mi porcentaje
-
 // pokeOrden.addEventListener('change', () => {
 //     let option = pokeOrden.value;
 //     let ordenando = //aqui va mi funcion order junto con sus parametros
@@ -170,6 +159,44 @@ pokeOrden.addEventListener('change', () => {
          `
      })
 })
+//const compute =document.getElementById('type');
+//compute.addEventListener('click',()=>
+//let porcentajeee = document.getElementById('type').value;
+//let total = window.getComputeStats(data,'type',porcentajeee);
 
+
+
+//comienzo de mi funcion porcentaje modo prueba// google chart
+//google.charts.load('current', {'packages':['corechart']});
+     // google.charts.setOnLoadCallback(drawChart);
+
+      //function drawChart() {
+
+        //const data = google.visualization.arrayToDataTable([
+         // ['Task', 'Hours per Day'],
+          //['Work',     11],
+          //['Eat',      2],
+          //['Commute',  2],
+          //['Watch TV', 2],
+          //['Sleep',    7]
+        //]);
+
+        //const options = {
+         // title: 'My Daily Activities'
+        //};
+
+        //const chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        //chart.draw(data, options);
+      //}
+  pokebox.innerHTML='';
+
+  let calcule = document.getElementById("type");
+  calcule.addEventListener("click", () => {
+  let condition = calcule.value;
+  let result = window.computeStats(data,condition);
+  pokebox.innerHTML+=`<h3>Resultado</h3>
+  <p>${result}</p>`
+})
 
 window.onload = seeData(data);
